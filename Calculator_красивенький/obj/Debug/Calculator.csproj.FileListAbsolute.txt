@@ -1,0 +1,44 @@
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\bin\Debug\Calculator.exe.config
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\bin\Debug\Calculator.exe
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\bin\Debug\Calculator.pdb
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.exe
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.pdb
+C:\2курс, 2 сем\OOP\мои лабы\Calculator\obj\Debug\Calculator.Calculator.resources
+D:\2к2с\мои ооп\Calculator\bin\Debug\Calculator.exe.config
+D:\2к2с\мои ооп\Calculator\bin\Debug\Calculator.exe
+D:\2к2с\мои ооп\Calculator\bin\Debug\Calculator.pdb
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.Calculator.resources
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.exe
+D:\2к2с\мои ооп\Calculator\obj\Debug\Calculator.pdb
+D:\Danila\Calculator\bin\Debug\Calculator.exe.config
+D:\Danila\Calculator\bin\Debug\Calculator.exe
+D:\Danila\Calculator\bin\Debug\Calculator.pdb
+D:\Danila\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+D:\Danila\Calculator\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+D:\Danila\Calculator\obj\Debug\Calculator.Calculator.resources
+D:\Danila\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Danila\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\Danila\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+D:\Danila\Calculator\obj\Debug\Calculator.exe
+D:\Danila\Calculator\obj\Debug\Calculator.pdb
+D:\2к2с\мои ооп\Calculator_красивенький\bin\Debug\Calculator.exe.config
+D:\2к2с\мои ооп\Calculator_красивенький\bin\Debug\Calculator.exe
+D:\2к2с\мои ооп\Calculator_красивенький\bin\Debug\Calculator.pdb
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.csproj.AssemblyReference.cache
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.Calculator.resources
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.Properties.Resources.resources
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.exe
+D:\2к2с\мои ооп\Calculator_красивенький\obj\Debug\Calculator.pdb

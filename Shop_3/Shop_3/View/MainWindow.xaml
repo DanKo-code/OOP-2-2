@@ -1,0 +1,272 @@
+﻿<Window x:Class="Shop_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop_3"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="420" MinWidth="250" Icon="D:\2k2s\мои ооп\Shop_3\Shop_3\my-mouse-pointer (1).cur">
+
+    <Window.Resources>
+        <Style x:Key="MenuButton" TargetType="MenuItem">
+            <Setter Property="Background" Value="Bisque" />
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+    </Window.Resources>
+    
+        <!--ShowGridLines="True-->
+    <Grid Background="#23262B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.45*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <!--верхняя панель-->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="469*"/>
+                <ColumnDefinition Width="258*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Иконка-->
+            <TextBlock Text="SP" VerticalAlignment="Center" HorizontalAlignment="Center" Background="DarkGray"/>
+
+            <!--менюшка с кнопкми с выпадениями-->
+            <Menu Background="#23262B" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                <!--Файл-->
+                <MenuItem Header="{DynamicResource Файл}" Style="{StaticResource MenuButton}">
+                    <MenuItem Header="{DynamicResource Открыть}" Command="{Binding OpenCommand}"/>
+                    <MenuItem Header="{DynamicResource Сохранить}" Command="{Binding SaveCommand}"/>
+                </MenuItem>
+
+                <!--Филтр-->
+                <MenuItem Header="{DynamicResource Фильтр}" Style="{StaticResource MenuButton}">
+                    <MenuItem Header="{DynamicResource Цена}" Command="{Binding PriceSort}">
+
+                    </MenuItem>
+
+                    <MenuItem Header="{DynamicResource Рейтинг}" Command="{Binding RatingSort}">
+
+                    </MenuItem>
+
+                    <MenuItem Header="{DynamicResource Количество}" Command="{Binding AmountSort}">
+
+                    </MenuItem>
+                </MenuItem>
+
+                <!--Тема-->
+                <MenuItem Header="{DynamicResource Тема}" Style="{StaticResource MenuButton}">
+                    <MenuItem Header="Светлая">
+
+                    </MenuItem>
+
+                    <MenuItem Header="Темная">
+
+                    </MenuItem>
+                </MenuItem>
+
+                <!--Язык-->
+                <MenuItem Header="{DynamicResource Язык}" Style="{StaticResource MenuButton}" >
+                    <MenuItem Header="{DynamicResource Русский}" Command="{Binding ChangeToRus}">
+
+                    </MenuItem>
+
+                    <MenuItem Header="{DynamicResource English}" Command="{Binding ChangeToEng}">
+
+                    </MenuItem>
+                </MenuItem>
+
+                <!--Поиск Пока хз--><!--
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBox x:Name="Search_box" Grid.Column="0" Text="Поиск" Background="Bisque" Width="100" Height="20" >
+
+                    </TextBox>
+
+                    <Button Grid.Column="1" Width="20" Command="local:WindowCommands.Search">
+                        --><!--<Image Source="Shop_3/Imges/1.jpg" Width="10" Height="10" />--><!--
+                    </Button>
+                    
+                </Grid>-->
+                
+            </Menu>
+        </Grid>
+
+        <!--список товаров-->
+        <ListBox x:Name="prod_list" Grid.Row="1" Grid.Column="0" Background="#2E333A"
+                 ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <!--левая часть: краткое назв., категория, цена-->
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <!--краткое назв.-->
+                            <TextBlock Grid.Row="0" Text="{Binding Path=ShortTitle}"/>
+
+                            <!--категория-->
+                            <TextBlock Grid.Row="1" Text="{Binding Path=Category}"/>
+
+                            <!--цена-->
+                            <TextBlock Grid.Row="2" Text="{Binding Path=Price}"/>
+                        </Grid>
+
+                        <!--првая часть: фото, рейтинг-->
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <!--Исправить-->
+                            <Image Grid.Row="0" Source="{Binding Path=Image}" MaxWidth="100" MinHeight="100" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Text="{Binding Path=Rating}" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--Изменение товара-->
+        <Grid Grid.Row="1" Grid.Column="1" DataContext="{Binding SelectedProduct}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--левая часть-->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="1.25*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--Краткое название-->
+                <TextBlock Foreground="White" Grid.Row="0" Text="{DynamicResource Краткое название}" Margin="10 10 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="0" Margin="10 10 30 0" Height="20" Text="{Binding ShortTitle, UpdateSourceTrigger=PropertyChanged}">
+
+                </TextBox>
+
+                <!--Полное название-->
+                <TextBlock Foreground="White" Grid.Row="1" Text="{DynamicResource Полное название}" Margin="10 10 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="1" Margin="10 10 30 0" Height="20" Text="{Binding FullTitle, UpdateSourceTrigger=PropertyChanged}">
+
+                </TextBox>
+
+                <!--Описание-->
+                <TextBlock Foreground="White" Grid.Row="2" Text="{DynamicResource Описание}" Margin="10 8 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="2" Margin="10 10 30 0" Height="40" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}">
+
+                </TextBox>
+
+                <!--Категория-->
+                <TextBlock Foreground="White" Grid.Row="3" Text="{DynamicResource Категория}" Margin="10 10 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="3" Margin="10 10 30 0" Height="20" Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}">
+
+                </TextBox>
+
+                <!--Рейтинг-->
+                <TextBlock Foreground="White" Grid.Row="4" Text="{DynamicResource Рейтинг}" Margin="10 8 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="4" Margin="10 10 30 0" Height="20" Text="{Binding Rating, UpdateSourceTrigger=PropertyChanged}">
+
+                </TextBox>
+            </Grid>
+
+            <!--правая часть-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--фото с кнопкой-->
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!--Фотка-->
+                    <Image Grid.Row="0" Source="{Binding Image, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+                </Grid>
+
+                <!--Цена-->
+                <TextBlock Foreground="White" Grid.Row="1" Text="{DynamicResource Цена}" Margin="10 3 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="1" Margin="10 10 30 0" Height="20" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--Количество-->
+                <TextBlock Foreground="White" Grid.Row="2" Text="{DynamicResource Количество}" Margin="10 3 0 0">
+
+                </TextBlock>
+                <TextBox Grid.Row="2" Margin="10 10 30 0" Height="20" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!--Количество-->
+                <Button Content="{DynamicResource Очистить}" Grid.Row="3" MaxWidth="200" MaxHeight="25"/>
+
+            </Grid>
+        </Grid>
+
+        <!--Добвавить, Удалить кнопки-->
+        <Grid Grid.Row="3" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding AddCommand}" Grid.Column="0" Content="+" FontSize="30" MaxWidth="50" MaxHeight="50"/>
+            <Button Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedProduct}" Grid.Column="1" Content="-" FontSize="30" MaxWidth="50" MaxHeight="50"/>
+        </Grid>
+
+        <!--undo, redo-->
+        <Grid Grid.Row="2" Grid.Column="2">
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                <Button Command="{Binding AddImage}" CommandParameter="{Binding SelectedProduct}" Content="{DynamicResource Добавить фото}" FontSize="20" Margin="10 0 0 0" Height="50" Width="150"/>
+            <!--<Button  Content="Undo" FontSize="20" Margin="10 0 0 0" MaxHeight="50" MaxWidth="100"/>
+            <Button  Content="Redo" FontSize="20" Margin="10 0 0 0" MaxHeight="50" MaxWidth="100"/>-->
+        </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
