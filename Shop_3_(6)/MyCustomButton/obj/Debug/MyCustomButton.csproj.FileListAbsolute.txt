@@ -1,0 +1,13 @@
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\bin\Debug\MyCustomButton.dll
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\bin\Debug\MyCustomButton.pdb
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.csproj.AssemblyReference.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton_MarkupCompile.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton_MarkupCompile.lref
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\Themes\Generic.baml
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.g.resources
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.Properties.Resources.resources
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.csproj.GenerateResource.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.csproj.CoreCompileInputs.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.dll
+D:\2k2s\OOP_MY\Shop_3_(6)\MyCustomButton\obj\Debug\MyCustomButton.pdb

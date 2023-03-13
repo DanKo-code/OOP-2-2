@@ -1,0 +1,17 @@
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\bin\Debug\net5.0-windows\WpfControlLibrary.deps.json
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\bin\Debug\net5.0-windows\WpfControlLibrary.dll
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\bin\Debug\net5.0-windows\WpfControlLibrary.pdb
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.csproj.AssemblyReference.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\UserControl1.g.cs
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary_MarkupCompile.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary_MarkupCompile.lref
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\UserControl1.baml
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.g.resources
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.AssemblyInfoInputs.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.AssemblyInfo.cs
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.csproj.CoreCompileInputs.cache
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.dll
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\refint\WpfControlLibrary.dll
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\WpfControlLibrary.pdb
+D:\2k2s\OOP_MY\Shop_3_(6)\WpfControlLibrary\obj\Debug\net5.0-windows\ref\WpfControlLibrary.dll
