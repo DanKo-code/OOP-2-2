@@ -48,5 +48,36 @@ namespace Shop_3
             Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
+
+        static int counter = 0;
+        private void Control_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show($"{counter++} \n" +
+                $"sender: {sender}\n" +
+                $"source: {e.Source}");
+        }
+
+        private void Control_MouseDown_2(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show($"{counter++} \n" +
+                $"sender: {sender}\n" +
+                $"source: {e.Source}");
+        }
+
+        private void Message_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("RoutedUICommand");
+        }
     }
+
+    public class WindowCommand
+    {
+        static WindowCommand()
+        {
+            RUC = new RoutedCommand("RUC", typeof(MainWindow));
+        }
+
+        public static RoutedCommand RUC { get; set; }
+    }
+
 }

@@ -22,8 +22,12 @@
         </Style>
     </Window.Resources>
 
+    <Window.CommandBindings>
+        <CommandBinding Command="local:WindowCommand.RUC"  Executed="Message_Executed" />
+    </Window.CommandBindings>
+
     <!--ShowGridLines="True-->
-    <Grid Style="{DynamicResource blackBackground}">
+    <Grid Style="{DynamicResource blackBackground}" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="57*"/>
             <ColumnDefinition Width="67*"/>
@@ -37,7 +41,7 @@
         </Grid.RowDefinitions>
 
         <!--верхняя панель-->
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+        <Grid PreviewMouseDown="Control_MouseDown_2" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80*"/>
                 <ColumnDefinition Width="469*"/>
@@ -45,7 +49,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Иконка-->
-            <Button Style="{StaticResource TopIcon}" Content="SP" VerticalAlignment="Center" HorizontalAlignment="Center" Background="DarkGray"/>
+            <Button PreviewMouseDown="Control_MouseDown_2" Style="{StaticResource TopIcon}" Content="SP" VerticalAlignment="Center" HorizontalAlignment="Center" Background="DarkGray"/>
 
             <!--менюшка с кнопкми с выпадениями-->
             <Menu Style="{DynamicResource blackBackground}" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2">
@@ -277,8 +281,8 @@
         </Grid>
 
         <!--undo, redo-->
-        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="134,0,0,0">
-            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="134,0,0,0" MouseDown="Control_MouseDown">
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" MouseDown="Control_MouseDown">
                 <Button Style="{StaticResource CustomButton}" Command="{Binding AddImage}" CommandParameter="{Binding SelectedProduct}" Content="{DynamicResource Добавить фото}" FontSize="20" Margin="10 0 0 0" Height="50" Width="150"/>
 
                 <Button  Content="Undo" Command="{Binding Undo}" FontSize="20" Margin="10 0 0 0" MaxHeight="50" MaxWidth="100"/>
@@ -286,8 +290,19 @@
 
                 <!--Спросить!!!!!!-->
                 <uc:UserControl1 Height="100" Margin="10,-20,0,0"/>
+
+                <Button Content="Bubbling" x:Name="button1" Width="50" Height="50" MouseDown="Control_MouseDown" Margin="10" >
+                    
+                </Button>
+
+                <Button Content="RoCo" x:Name="button2" Width="50" Height="50" Margin="10" Command="local:WindowCommand.RUC">
+
+                </Button>
+
             </StackPanel>
         </Grid>
 
+        
+        
     </Grid>
 </Window>

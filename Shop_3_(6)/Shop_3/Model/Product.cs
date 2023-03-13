@@ -5,11 +5,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace Shop_3.Model
 {
-    public class Product : INotifyPropertyChanged
+    public class Product : DependencyObject, INotifyPropertyChanged 
     {
         private string shortTitle;
         private string fullTitle;
@@ -19,7 +20,36 @@ namespace Shop_3.Model
         private int rating;
         private int price;
         private int amount;
+
+        public static readonly DependencyProperty PriceProperty;
+
+        static Product()
+        {
+
+            FrameworkPropertyMetadata metadata = new FrameworkPropertyMetadata();
+            metadata.CoerceValueCallback = new CoerceValueCallback(CorrectValue);
+
+            PriceProperty = DependencyProperty.Register("Price", typeof(int), typeof(Product), metadata,
+                new ValidateValueCallback(ValidateValue));
+        }
         
+
+        private static object CorrectValue(DependencyObject d, object baseValue)
+        {
+            int currentValue = (int)baseValue;
+            if (currentValue > 1000)  // если больше 1000, возвращаем 1000
+                return 1000;
+            return currentValue; // иначе возвращаем текущее значение
+        }
+
+        private static bool ValidateValue(object value)
+        {
+            int currentValue = (int)value;
+            if (currentValue >= 0) // если текущее значение от нуля и выше
+                return true;
+            return false;
+        }
+
 
         public string ShortTitle
         {
