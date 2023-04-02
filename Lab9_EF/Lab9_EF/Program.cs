@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Lab9_EF.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +10,8 @@ namespace Lab9_EF
 {
     internal class Program
     {
+        //Lab_9
+        /*
         static void Main(string[] args)
         {
             using (FitnessContext db = new FitnessContext())
@@ -46,6 +50,29 @@ namespace Lab9_EF
                 //    Console.WriteLine();
                 //}
             }
+        
+        }
+        */
+
+        //Lab_10
+        static void Main(string[] args)
+        {
+            #region Repository
+            EFGenericRepository<Client> clientRepo = new EFGenericRepository<Client>(new FitnessContext());
+
+            IEnumerable<Client> clients = clientRepo.GetWithInclude(p => p.Plan);
+            //IEnumerable<Client> clients = clientRepo.GetWithInclude(x => x.Plan.Name.StartsWith("S"), p => p.Company);
+            foreach (Client p in clients)
+            {
+                Console.WriteLine($"{p.Name} ({p.Plan.Name}) - {p.Age}");
+            }
+            #endregion
+
+            #region  Unit of Work
+                
+            #endregion
+
+            Console.ReadLine();
         }
     }
 }
