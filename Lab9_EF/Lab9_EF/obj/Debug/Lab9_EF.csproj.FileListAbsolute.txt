@@ -1,0 +1,13 @@
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\Lab9_EF.exe.config
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\Lab9_EF.exe
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\Lab9_EF.pdb
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\obj\Debug\Lab9_EF.csproj.AssemblyReference.cache
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\obj\Debug\Lab9_EF.csproj.SuggestedBindingRedirects.cache
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\obj\Debug\Lab9_EF.csproj.CoreCompileInputs.cache
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\obj\Debug\Lab9_EF.exe
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\obj\Debug\Lab9_EF.pdb
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\EntityFramework.dll
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\EntityFramework.SqlServer.dll
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\EntityFramework.xml
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\bin\Debug\EntityFramework.SqlServer.xml
+D:\2k2s\OOP_MY\Lab9_EF\Lab9_EF\obj\Debug\Lab9_EF.csproj.CopyComplete
