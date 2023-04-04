@@ -18,4 +18,6 @@
     <v:String x:Key="Категория">Category</v:String>
     <v:String x:Key="Очистить">Clear</v:String>
     <v:String x:Key="Добавить фото">Add photo</v:String>
+
+    <v:String x:Key="Поиск">Search</v:String>
 </ResourceDictionary>

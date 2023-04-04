@@ -1,0 +1,85 @@
+﻿<Window x:Class="Shop_3.View.FormSearch"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit/extended/wpf-toolkit"
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop_3.View"
+        mc:Ignorable="d"
+        Title="FormSearch" Height="500" Width="800">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel DataContext="{Binding CategoryPriceModel}" Grid.Row="0">
+            <TextBlock TextAlignment="Center" FontSize="20" >Ахуенный поиск</TextBlock>
+
+            <TextBlock TextAlignment="Center" FontSize="20" >Категории</TextBlock>
+            <TextBox Text="{Binding Category, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock TextAlignment="Center" FontSize="20" >Цена</TextBlock>
+
+            <TextBlock  FontSize="20" >Начальная</TextBlock>
+            <TextBox Text="{Binding StartPrice, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock  FontSize="20" >Конечная</TextBlock>
+            <TextBox Text="{Binding EndPrice, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button x:Name="SearchActiveButton" Content="Искать" Command="{Binding SearchActive}"></Button>
+        </StackPanel>
+        <!--список товаров-->
+            <ListBox x:Name="prod_list" Grid.Row="1" Background="#2E333A"
+                 ItemsSource="{Binding SearchedProducts}" SelectedItem="{Binding SelectedProduct}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--левая часть: краткое назв., категория, цена-->
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <!--краткое назв.-->
+                                <TextBlock Grid.Row="0" Text="{Binding Path=ShortTitle}"/>
+
+                                <!--категория-->
+                                <TextBlock Grid.Row="1" Text="{Binding Path=Category}"/>
+
+                                <!--цена-->
+                                <TextBlock Grid.Row="2" Text="{Binding Path=Price}"/>
+                            </Grid>
+
+                            <!--првая часть: фото, рейтинг-->
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <!--Исправить-->
+                                <Image Grid.Row="0" Source="{Binding Path=Image}" MaxWidth="100" MinHeight="100" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Row="1" Text="{Binding Path=Rating}" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        
+
+    </Grid>
+    
+
+</Window>

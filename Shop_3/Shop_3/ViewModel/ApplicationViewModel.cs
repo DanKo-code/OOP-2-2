@@ -12,17 +12,166 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows;
+using Shop_3.View;
+using System.Text.RegularExpressions;
 
 namespace Shop_3.ViewModel
 {
     public class ApplicationViewModel : INotifyPropertyChanged
     {
+        //Product selectedProduct;
+        //CategoryPriceModel categoryPriceModel = new CategoryPriceModel();
+        //public ObservableCollection<Product> SearchedProducts { get; set; }
+
+        //IFileService fileService;
+        //IDialogService dialogService;
+
+        //public ObservableCollection<Product> Products { get; set; }
+
+        ////Кнопка искать
+        //private RelayCommand searchActive;
+        //public RelayCommand SearchActive
+        //{
+        //    get
+        //    {
+        //        return searchActive ??
+        //          (searchActive = new RelayCommand(obj =>
+        //          {
+        //              CategoryPriceModel temp = categoryPriceModel;
+        //          }));
+        //    }
+        //}
+
+
+        ////Открыть форму поиска
+        //private RelayCommand search;
+
+        //public RelayCommand Search 
+        //{
+        //    get
+        //    {
+        //        return search ??
+        //          (search = new RelayCommand(obj =>
+        //          {
+        //              categoryPriceModel = new CategoryPriceModel();
+        //              FormSearch multySearch = new FormSearch(this);
+
+        //              multySearch.Show();
+        //          }));
+        //    }
+        //}
+
+
         Product selectedProduct;
+        CategoryPriceModel categoryPriceModel = new CategoryPriceModel(); // проинициализируем здесь
+        public ObservableCollection<Product> SearchedProducts { get; set; }
 
         IFileService fileService;
         IDialogService dialogService;
 
         public ObservableCollection<Product> Products { get; set; }
+
+        //Кнопка искать
+        private RelayCommand searchActive;
+        public RelayCommand SearchActive
+        {
+            get
+            {
+                return searchActive ??
+                  (searchActive = new RelayCommand(obj =>
+                  {
+                      SearchedProducts.Clear();
+
+                      //categoryPriceModel
+
+                      if (categoryPriceModel.Category == null)
+                      {
+                          int startPrice = categoryPriceModel.StartPrice;
+                          int endPrice = categoryPriceModel.EndPrice;
+
+                          var res = Products.Where(x => (x.Price >= startPrice && x.Price <= endPrice));
+
+                          foreach(Product product in res) 
+                          {
+                              SearchedProducts.Add(product);
+                          }
+                      }
+                      else
+                      {
+
+                          int startPrice = categoryPriceModel.StartPrice;
+                          int endPrice = categoryPriceModel.EndPrice;
+
+                          var res = Products.Where(x => (x.Price >= startPrice && x.Price <= endPrice));
+
+                          //foreach (Product product in res)
+                          //{
+                          //    SearchedProducts.Add(product);
+                          //}
+                          /////////////////////////////////////////////////////////////////////////////////////////
+                          string pattern = categoryPriceModel.Category;
+
+
+                          foreach (Product product in res)
+                          {
+                              if (Regex.IsMatch(product.Category, pattern))
+                              {
+                                  SearchedProducts.Add(product);
+                              }
+                          }
+
+                          
+                      }
+
+
+
+                  }));
+            }
+        }
+
+
+        //Открыть форму поиска
+        private RelayCommand search;
+
+        public RelayCommand Search
+        {
+            get
+            {
+                return search ??
+                  (search = new RelayCommand(obj =>
+                  {
+                      FormSearch multySearch = new FormSearch(this);
+
+                      multySearch.Show();
+                  }));
+            }
+        }
+
+        //Очистить
+        private RelayCommand clear;
+        public RelayCommand Clear
+        {
+            get
+            {
+                return clear ??
+                  (clear = new RelayCommand(obj =>
+                  {
+
+                      if (obj == null) return;
+
+                      ((Product)obj).ShortTitle = "";
+                      ((Product)obj).FullTitle = "";
+                      ((Product)obj).Description = "";
+                      ((Product)obj).Category = "";
+                      ((Product)obj).Rating = 0;
+                      ((Product)obj).Price = 0;
+                      ((Product)obj).Amount = 0;
+                      ((Product)obj).Image = null;
+
+                  }));
+            }
+        }
+
 
         //смена языка
         //Англ
@@ -37,7 +186,7 @@ namespace Shop_3.ViewModel
                       try
                       {
                           Application.Current.Resources.MergedDictionaries[0].Source = 
-                          new Uri("D:\\2k2s\\мои ооп\\Shop_3\\Shop_3\\Resources\\Eng.xaml", UriKind.RelativeOrAbsolute);
+                          new Uri("D:\\2k2s\\OOP_MY\\Shop_3\\Shop_3\\Resources\\Eng.xaml", UriKind.RelativeOrAbsolute);
                       }
                       catch (Exception ex)
                       {
@@ -61,7 +210,7 @@ namespace Shop_3.ViewModel
                       try
                       {
                           Application.Current.Resources.MergedDictionaries[0].Source =
-                          new Uri("D:\\2k2s\\мои ооп\\Shop_3\\Shop_3\\Resources\\Rus.xaml", UriKind.RelativeOrAbsolute);
+                          new Uri("D:\\2k2s\\OOP_MY\\Shop_3\\Shop_3\\Resources\\Rus.xaml", UriKind.RelativeOrAbsolute);
                       }
                       catch (Exception ex)
                       {
@@ -86,7 +235,7 @@ namespace Shop_3.ViewModel
                       {
                           if (dialogService.OpenFileDialog() == true)
                           {
-                              Product product = obj as Product;
+                              Product product = selectedProduct as Product;
                               if (product != null)
                               {
                                   Products[Products.IndexOf(product)].Image = new BitmapImage(new Uri(dialogService.FilePath, UriKind.Absolute));
@@ -102,39 +251,39 @@ namespace Shop_3.ViewModel
             }
         }
 
-        // команда поиска
-        private RelayCommand search;
-        public RelayCommand Search
-        {
-            get
-            {
-                return priceSort ??
-                  (priceSort = new RelayCommand(obj =>
-                  {
-                      try
-                      {
-                          var temp = Products.Where(x=>x.ShortTitle == obj.ToString());
+        //// команда поиска
+        //private RelayCommand search;
+        //public RelayCommand Search
+        //{
+        //    get
+        //    {
+        //        return priceSort ??
+        //          (priceSort = new RelayCommand(obj =>
+        //          {
+        //              try
+        //              {
+        //                  var temp = Products.Where(x=>x.ShortTitle == obj.ToString());
 
 
-                          //var temp = Products.OrderBy(x => x.Price).ToList();
+        //                  //var temp = Products.OrderBy(x => x.Price).ToList();
 
-                          Products.Clear();
+        //                  Products.Clear();
 
-                          foreach (var product in temp)
-                          {
-                              Products.Add(product);
-                          }
+        //                  foreach (var product in temp)
+        //                  {
+        //                      Products.Add(product);
+        //                  }
 
 
-                      }
-                      catch (Exception ex)
-                      {
-                          dialogService.ShowMessage(ex.Message);
-                      }
+        //              }
+        //              catch (Exception ex)
+        //              {
+        //                  dialogService.ShowMessage(ex.Message);
+        //              }
 
-                  }));
-            }
-        }
+        //          }));
+        //    }
+        //}
 
         // команды фильтрации
         //Цена
@@ -330,6 +479,16 @@ namespace Shop_3.ViewModel
             }
         }
 
+        public CategoryPriceModel CategoryPriceModel
+        {
+            get { return categoryPriceModel; }
+            set
+            {
+                categoryPriceModel = value;
+                OnPropertyChanged("CategoryPriceModel");
+            }
+        }
+
         public ApplicationViewModel(IDialogService dialogService, IFileService fileService)
         {
             this.dialogService = dialogService;
@@ -337,6 +496,7 @@ namespace Shop_3.ViewModel
 
             // данные по умлолчанию
             Products = new ObservableCollection<Product>();
+            SearchedProducts = new ObservableCollection<Product>();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -22,6 +22,8 @@ namespace Shop_3
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ApplicationViewModel _temp;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +32,15 @@ namespace Shop_3
             var customCursor = new Cursor(sri.Stream);
             Cursor = customCursor;
 
-            DataContext = new ApplicationViewModel(new DefaultDialogService(), new JsonFileService());
+            ApplicationViewModel temp = new ApplicationViewModel(new DefaultDialogService(), new JsonFileService());
+
+            _temp = temp;
+
+            DataContext = temp;
+
+
+            ClearButton.DataContext = temp;
         }
     }
 }
+
