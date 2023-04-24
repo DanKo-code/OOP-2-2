@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JbfxyHUcu7nP01CrYaCQde7qZ27noEZjr4m9zDfQQ9m98a6SadzU7k6hvD4exvbXzdfTSa5HtwI+KCWkavViTA==",
+  "success": true,
+  "projectFilePath": "D:\\2k2s\\OOP_MY\\Курсач\\моя залупа\\DemoMVVM_2\\DemoMVVM_2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danik\\.nuget\\packages\\materialdesigncolors\\2.1.2\\materialdesigncolors.2.1.2.nupkg.sha512",
+    "C:\\Users\\danik\\.nuget\\packages\\materialdesignthemes\\4.8.0\\materialdesignthemes.4.8.0.nupkg.sha512",
+    "C:\\Users\\danik\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}

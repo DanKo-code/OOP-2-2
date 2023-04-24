@@ -1,0 +1,8 @@
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\bin\Debug\TestConsole.exe.config
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\bin\Debug\TestConsole.exe
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\bin\Debug\TestConsole.pdb
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\obj\Debug\TestConsole.csproj.AssemblyReference.cache
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\obj\Debug\TestConsole.csproj.SuggestedBindingRedirects.cache
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\obj\Debug\TestConsole.csproj.CoreCompileInputs.cache
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\obj\Debug\TestConsole.exe
+D:\2k2s\OOP_MY\Курсач\моя залупа\TestConsole\obj\Debug\TestConsole.pdb
