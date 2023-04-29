@@ -75,7 +75,7 @@ namespace ClientWPF.MVVM.ViewModel
             var users = _usersRepository.GetAllUsers(); // Returns only users with roleId 2 (simple users), not admins
             foreach (var user in users)
             {
-                user.ImageBytes = _userImagesRepository.GetImageByUserId(user.Id).Image;
+                //user.ImageBytes = _userImagesRepository.GetImageByUserId(user.Id).Image;
                 user.MoneyAmount = _bankAccountsRepository.GetBankAccountByUserId(user.Id).MoneyAmount;
                 Users.Add(user);
             }
