@@ -1,0 +1,15 @@
+C:\2курс, 1 сем\ООП\16\Motor depot\bin\Debug\net6.0\Motor depot.exe
+C:\2курс, 1 сем\ООП\16\Motor depot\bin\Debug\net6.0\Motor depot.deps.json
+C:\2курс, 1 сем\ООП\16\Motor depot\bin\Debug\net6.0\Motor depot.runtimeconfig.json
+C:\2курс, 1 сем\ООП\16\Motor depot\bin\Debug\net6.0\Motor depot.dll
+C:\2курс, 1 сем\ООП\16\Motor depot\bin\Debug\net6.0\Motor depot.pdb
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.csproj.AssemblyReference.cache
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.GeneratedMSBuildEditorConfig.editorconfig
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.AssemblyInfoInputs.cache
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.AssemblyInfo.cs
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.csproj.CoreCompileInputs.cache
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.dll
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\refint\Motor depot.dll
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.pdb
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\Motor depot.genruntimeconfig.cache
+C:\2курс, 1 сем\ООП\16\Motor depot\obj\Debug\net6.0\ref\Motor depot.dll
