@@ -280,8 +280,8 @@
                                     <StackPanel Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
-<!--g-->
-                            <ListBox.ItemTemplate>
+
+                                    <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
                                         <Image Source="{Binding Phote}" Width="50" Height="50"/>
