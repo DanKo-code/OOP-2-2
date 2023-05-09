@@ -280,7 +280,7 @@
                                     <StackPanel Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
-
+<!--g-->
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
