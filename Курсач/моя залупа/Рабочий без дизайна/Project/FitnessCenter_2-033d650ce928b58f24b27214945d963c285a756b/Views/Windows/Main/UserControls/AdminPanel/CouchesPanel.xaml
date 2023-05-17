@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="FitnessCenter.Views.Windows.Main.UserControls.AdminPanel.CouchesPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FitnessCenter.Views.Windows.Main.UserControls.AdminPanel"
+             
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:help="clr-namespace:FitnessCenter.Helpers"
+             
+             xmlns:conv="clr-namespace:FitnessCenter.Converters"
+
+             xmlns:vm="clr-namespace:FitnessCenter.ViewModel"
+             
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=vm:AdminPanelViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ContextMenu x:Key="MyListBoxContextMenu" DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
+            <MenuItem Header="Добавить/Изменить фото" Command="{Binding SetServicePhoto}"/>
+            <MenuItem Header="Удалить" Visibility="{Binding }" Command="{Binding}"/>
+        </ContextMenu>
+
+        <conv:MissingPhotoConverter x:Key="MissingPhotoConverter"/>
+    </UserControl.Resources>
+
+
+
+
+    <Grid Background="#7564A3">
+
+        <Border Margin="20">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+        <!--a-->
+                <Image Grid.Row="0" Width="260" Height="100" Stretch="Fill" HorizontalAlignment="Left"
+               VerticalAlignment="Center" Source="{Binding SelectedCouches.Photo, Converter={StaticResource MissingPhotoConverter}, UpdateSourceTrigger=PropertyChanged}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="PreviewMouseRightButtonDown">
+                            <i:InvokeCommandAction Command="{Binding SetPhoto}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+
+        <!--a-->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Имя"/>
+                        <TextBox Width="300" Style="{DynamicResource mytextbox}"  Text="{Binding SelectedCouches.Name, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel> 
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1">
+            <StackPanel VerticalAlignment="Center">
+                        <Label Grid.Row="0" Content="Описанике"/>
+                        <TextBox Height="60" Width="600" Grid.Row="1" Text="{Binding SelectedCouches.Description, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource mytextbox}"/>
+                    </StackPanel> 
+        </StackPanel>
+
+        
+
+        <!--#region Секция для добавления сервиса-->
+                <StackPanel Panel.ZIndex="10" Grid.Row="3" Margin="5">
+            <Label Content="Услуги:"/>
+
+                    <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="PreviewMouseRightButtonDown">
+                            <i:InvokeCommandAction Command="{Binding ChangeServicesListVisibility}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                    </Grid.ColumnDefinitions>
+
+                            <TextBox  Text="{Binding NewServiceName}" Style="{DynamicResource mytextbox}" Grid.Column="0" Grid.Row="0">
+                        <TextBox.ContextMenu>
+                            <ContextMenu Visibility="Collapsed"/>
+                        </TextBox.ContextMenu>
+                    </TextBox>
+
+                    <Button Style="{DynamicResource myButton}" Margin="2 0 2 0" Command="{Binding AddService}" Content="Добавить" Grid.Column="1"/>
+                            <Button Style="{DynamicResource myButton}" Margin="2 0 2 0" Command="{Binding RemoveService}" Content="Удалить" Grid.Column="2"/>
+                </Grid>
+
+                        <help:MyListBox Panel.ZIndex="999" x:Name="MyListBox" RSelectedItem="{Binding RSelectedItem}"
+                                SelectedItems="{Binding SelectedCouches.Services, Mode=TwoWay,
+                                UpdateSourceTrigger=PropertyChanged}" MaxHeight="100" Visibility="{Binding ServicesListVisibility}"
+                                ItemsSource="{Binding ServicesList}" Grid.Row="1" SelectionMode="Multiple" ContextMenu="{StaticResource MyListBoxContextMenu}">
+
+                    <help:MyListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title}"/>
+                        </DataTemplate>
+                    </help:MyListBox.ItemTemplate>
+
+
+                </help:MyListBox>
+
+
+
+            </Grid>
+        </StackPanel>
+
+
+
+        <!--#endregion-->
+
+
+
+
+            </Grid>
+
+         
+                
+        </Border>
+        
+    </Grid>
+
+    
+    
+</UserControl>
